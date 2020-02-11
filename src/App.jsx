@@ -13,7 +13,7 @@ const App = () => {
         <Header>
           <AppLogo appName={appName} />
         </Header>
-        <Content className="content">
+        <Content>
           <Row>
             <Col span={12}>Content</Col>
           </Row>

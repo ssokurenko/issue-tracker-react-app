@@ -16,8 +16,7 @@ code {
   background: #fff;
 }
 
-.content {
-  background: #fff;
+.ant-layout-content {
   margin: 0 auto;
   min-width: 960px;
 }
