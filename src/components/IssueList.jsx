@@ -1,30 +1,19 @@
 import React from 'react'
-import { Card } from 'antd'
 
 const IssueList = ({ issues, status }) => {
-  const columnStyles = {
-    background: '#f6f6f6',
-    padding: '.5rem'
-  }
-  const cardStyles = {
-    marginBottom: '.5rem'
-  }
-
   return (
-    <div style={columnStyles}>
-      <h3>{status}</h3>
+    <div>
+      <h4>{status}</h4>
       {issues
         .filter(issue => issue.status === status)
         .map(issue => (
-          <Card style={cardStyles} key={issue.id}>
-            <div>
-              <strong>{issue.desc}</strong>
-            </div>
-            <div>
+          <div key={issue.id} className="lin-card has-space-bottom">
+            <h4>{issue.desc}</h4>
+            <h6>
               {issue.createdAt.toLocaleDateString()}{' '}
               {issue.createdAt.toLocaleTimeString()}
-            </div>
-          </Card>
+            </h6>
+          </div>
         ))}
     </div>
   )

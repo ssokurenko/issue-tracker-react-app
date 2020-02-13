@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Row, Col } from 'antd'
+import { Layout } from 'antd'
 import uuid from 'uuid'
 import config from './config'
 import AppLogo from './components/AppLogo'
@@ -29,16 +29,20 @@ const App = () => {
           <AppLogo appName={appName} />
         </Header>
         <Content>
-          <Row gutter={[10, 10]}>
-            <Col span={24}>
-              <AddIssue onAddIssue={addIssue} />
-            </Col>
-            {issueStatuses.map(status => (
-              <Col span={6} key={status}>
-                <IssueList issues={issues} status={status} />
-              </Col>
-            ))}
-          </Row>
+          <div className="container">
+            <div className="row">
+              <div className="col-12 has-space-top">
+                <div className="lin-card">
+                  <AddIssue onAddIssue={addIssue} />
+                </div>
+              </div>
+              {issueStatuses.map(status => (
+                <div className="col-3 has-space-top" key={status}>
+                  <IssueList issues={issues} status={status} />
+                </div>
+              ))}
+            </div>
+          </div>
         </Content>
       </Layout>
     </div>

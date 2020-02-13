@@ -13,10 +13,5 @@ code {
 }
 
 .ant-layout {
-  background: #fff;
-}
-
-.ant-layout-content {
-  margin: 1rem auto;
-  min-width: 960px;
+  background: none;
 }
