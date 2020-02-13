@@ -26,7 +26,13 @@ const App = () => {
     <div>
       <Layout>
         <Header>
-          <AppLogo appName={appName} />
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <AppLogo appName={appName} />
+              </div>
+            </div>
+          </div>
         </Header>
         <Content>
           <div className="container">
