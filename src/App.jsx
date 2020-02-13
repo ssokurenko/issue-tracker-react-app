@@ -9,14 +9,14 @@ import IssueList from './components/IssueList'
 const { Header, Content } = Layout
 
 const App = () => {
-  const { appName, issueStates } = config
+  const { appName, issueStatuses } = config
   const [issues, setIssues] = useState([])
 
   const addIssue = desc => {
     const newIssue = {
       id: uuid.v4(),
       desc,
-      state: issueStates[0],
+      status: issueStatuses[0],
       createdAt: new Date()
     }
     setIssues([...issues, newIssue])
@@ -33,9 +33,9 @@ const App = () => {
             <Col span={24}>
               <AddIssue onAddIssue={addIssue} />
             </Col>
-            {issueStates.map(state => (
-              <Col span={6} key={state}>
-                <IssueList issues={issues} state={state} />
+            {issueStatuses.map(status => (
+              <Col span={6} key={status}>
+                <IssueList issues={issues} status={status} />
               </Col>
             ))}
           </Row>

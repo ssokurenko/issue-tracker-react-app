@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from 'antd'
 
-const IssueList = ({ issues, state }) => {
+const IssueList = ({ issues, status }) => {
   const columnStyles = {
     background: '#f6f6f6',
     padding: '.5rem'
@@ -12,9 +12,9 @@ const IssueList = ({ issues, state }) => {
 
   return (
     <div style={columnStyles}>
-      <h3>{state}</h3>
+      <h3>{status}</h3>
       {issues
-        .filter(issue => issue.state === state)
+        .filter(issue => issue.status === status)
         .map(issue => (
           <Card style={cardStyles} key={issue.id}>
             <div>
