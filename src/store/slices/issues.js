@@ -23,6 +23,12 @@ export const issuesSlice = createSlice({
         }
       })
       state = newState
+    },
+    deleteIssue: (state, action) => {
+      const newState = state.filter(
+        issue => issue.id !== action.payload.issueId
+      )
+      state = newState
     }
   }
 })
