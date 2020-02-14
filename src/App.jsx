@@ -11,6 +11,7 @@ const { Header, Content } = Layout
 const App = () => {
   const { appName, issueStatuses } = config
   const issues = useSelector(state => state.issues)
+
   return (
     <div>
       <Layout>

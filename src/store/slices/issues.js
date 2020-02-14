@@ -15,7 +15,15 @@ export const issuesSlice = createSlice({
       }
       state = state.push(newIssue)
     },
-    clearAll: state => (state = [])
+    clearAll: state => (state = []),
+    changeIssueStatus: (state, action) => {
+      const newState = state.forEach(issue => {
+        if (issue.id === action.payload.issueId) {
+          issue.status = action.payload.newStatus
+        }
+      })
+      state = newState
+    }
   }
 })
 
