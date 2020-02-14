@@ -15,7 +15,6 @@ const store = configureStore({
 })
 
 store.subscribe(() => {
-  console.log(store.getState())
   localStorage.setItem('issuesState', JSON.stringify(store.getState()))
 })
 

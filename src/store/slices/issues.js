@@ -14,7 +14,8 @@ export const issuesSlice = createSlice({
         createdAt: new Date().toISOString()
       }
       state = state.push(newIssue)
-    }
+    },
+    clearAll: state => (state = [])
   }
 })
 

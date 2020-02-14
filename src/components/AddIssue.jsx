@@ -14,18 +14,26 @@ const AddIssue = () => {
       setDesc(defaultValue)
     }
   }
+
+  const handleClearAllClick = () => {
+    dispatch(issuesSlice.actions.clearAll())
+  }
   return (
     <div className="row">
-      <div className="col-10">
+      <div className="col-8">
         <Input
           onChange={e => setDesc(e.target.value)}
           placeholder="Type new issue description"
           value={desc}
         />
       </div>
-      <div className="col-2">
+      <div className="col-4">
         <Button onClick={handleAddClick} type="primary">
           Add
+        </Button>
+        &nbsp;
+        <Button onClick={handleClearAllClick} type="primary">
+          Clear All
         </Button>
       </div>
     </div>
