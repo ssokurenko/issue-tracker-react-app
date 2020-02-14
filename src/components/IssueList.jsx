@@ -9,10 +9,7 @@ const IssueList = ({ issues, status }) => {
         .map(issue => (
           <div key={issue.id} className="lin-card has-space-bottom">
             <h4>{issue.desc}</h4>
-            <h6>
-              {issue.createdAt.toLocaleDateString()}{' '}
-              {issue.createdAt.toLocaleTimeString()}
-            </h6>
+            <h6>{issue.createdAt}</h6>
           </div>
         ))}
     </div>

@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { Input, Button } from 'antd'
 
-const AddIssue = ({ onAddIssue }) => {
+import { useDispatch } from 'react-redux'
+import { issuesSlice } from '../store/slices/issues'
+
+const AddIssue = () => {
+  const dispatch = useDispatch()
   const defaultValue = ''
   const [desc, setDesc] = useState(defaultValue)
   const handleAddClick = () => {
     if (desc && desc.length) {
-      onAddIssue(desc)
+      dispatch(issuesSlice.actions.addIssue({ desc }))
       setDesc(defaultValue)
     }
   }

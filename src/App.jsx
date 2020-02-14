@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { Layout } from 'antd'
-import uuid from 'uuid'
 import config from './config'
 import AppLogo from './components/AppLogo'
 import AddIssue from './components/AddIssue'
@@ -10,18 +10,7 @@ const { Header, Content } = Layout
 
 const App = () => {
   const { appName, issueStatuses } = config
-  const [issues, setIssues] = useState([])
-
-  const addIssue = desc => {
-    const newIssue = {
-      id: uuid.v4(),
-      desc,
-      status: issueStatuses[0],
-      createdAt: new Date()
-    }
-    setIssues([...issues, newIssue])
-  }
-
+  const issues = useSelector(state => state.issues)
   return (
     <div>
       <Layout>
@@ -39,7 +28,7 @@ const App = () => {
             <div className="row">
               <div className="col-12 has-space-top">
                 <div className="lin-card">
-                  <AddIssue onAddIssue={addIssue} />
+                  <AddIssue />
                 </div>
               </div>
               {issueStatuses.map(status => (
